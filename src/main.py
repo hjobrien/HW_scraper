@@ -38,8 +38,10 @@ def add_to_assignments(params):
     conn = sqlite3.connect('/Users/Hank/Library/Group Containers/YJW8D95H2C.com.istudiezteam/Library/Application Support/main.db')
     # conn = sqlite3.connect('main copy.db') #temp for testing
     c = conn.cursor()
-    c.execute("INSERT INTO assignments VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-              params)
+    notes = (params[7],)
+    if(len([1 for row in c.execute('SELECT * FROM assignments where notes = ? and DEL = 0' , notes)]) == 0):
+        c.execute("INSERT INTO assignments VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                  params)
 
     conn.commit()
 
