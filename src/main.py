@@ -88,10 +88,10 @@ for row in soup.find_all('tr')[1:]:
     prob_set = col[2].next.strip()
     # and append it to age variable
     problems.append(prob_set)
-
-print(due_dates)
-print(readings)
-print(problems)
+#
+# print(due_dates)
+# print(readings)
+# print(problems)
 for problem_set, due_string, reading in zip(problems, due_dates, readings):
     if(problem_set != ''):  #some assignments are posted but without question numbers
         uid = int(random.random() * 1000000)
