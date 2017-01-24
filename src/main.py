@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import sqlite3
 import random
 
-
+print('executing python')
 
 def date_to_num(due_date):
     #17191: Jan 25 2017
@@ -45,8 +45,8 @@ def add_to_assignments(params):
 
     conn.commit()
 
-    for row in c.execute('SELECT * FROM assignments'):
-        print(row)
+    # for row in c.execute('SELECT * FROM assignments'):
+    #     print(row)
 
     conn.close()
 
@@ -114,7 +114,7 @@ for problem_set, due_string, reading in zip(problems, due_dates, readings):
         course_uid = 30110954415 #course ID for math 53
         notify = 1
         total_points = None
-        name = reading + 'Test'
+        name = reading
         completion_time_offset = None
 
         params = (uid, is_new, is_local, del_val, server_uid, old_server_uid, notification_day, notes, due_date,
@@ -122,8 +122,3 @@ for problem_set, due_string, reading in zip(problems, due_dates, readings):
                   notification_time, course_uid, notify, total_points, name, completion_time_offset)
 
         add_to_assignments(params)
-
-
-
-
-
