@@ -3,15 +3,23 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>my.python.script.name</string>
+    <!-- script name -->
+    <string>shell_test.sh</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/path/to/python</string>
-        <string>/path/to/python/script.py</string>
+        <!-- path to python (from my .bash_profile)-->
+        <string>"/Library/Frameworks/Python.framework/Versions/3.5/bin</string>
+        <!-- path to script -->
+        <string>/Tests/shell_test.sh</string>
     </array>
     <key>StandardErrorPath</key>
     <string>/var/log/python_script.error</string>
+    <key>StandardOutPath</key>
+    <string>/Users/Hank/Desktop/output.txt</string>
     <key>KeepAlive</key>
     <true/>
+    <key>StartInterval</key>
+    <integer>15</integer>
+
 </dict>
 </plist>
